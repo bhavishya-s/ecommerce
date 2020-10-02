@@ -9,7 +9,7 @@ import { selectCartTotal } from "../../redux/cart/cart.selector";
 
 import "./checkout.styles.scss";
 
-const CheckoutPage = ({ cartItems, cartTotal }) => (
+const CheckoutPage = ({ cartItems, cartTotal, history }) => (
   <div className="checkout-page">
     <div className="checkout-header">
       <div className="header-block">
@@ -28,9 +28,9 @@ const CheckoutPage = ({ cartItems, cartTotal }) => (
         <span>Remove</span>
       </div>
     </div>
-    {cartItems.map((item) => (
+    {cartItems.length?cartItems.map((item) => (
       <CheckoutItem cartItem={item} key={item.id} />
-    ))}
+    )):<div className="cart-empty">Your cart is empty. Please add more items.</div>}
     <div className="total">
       <span>Total : ${cartTotal}</span>
     </div>
