@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   currentUser: null,
 };
 
-const UserReducer = (state = INITIAL_STATE, action) => {
+const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "SET_CURRENT_USER":
       return { ...state, currentUser: action.payload };
@@ -11,4 +11,4 @@ const UserReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default UserReducer;
+export default userReducer;
